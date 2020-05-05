@@ -13,6 +13,7 @@
   },
   "main": "src/OrbitDB.js",
   "dependencies": {
+    "asymmetric-crypto": "^1.0.2",
     "cids": "^0.7.1",
     "ipfs-pubsub-1on1": "~0.0.6",
     "is-node": "^1.0.2",
@@ -29,9 +30,10 @@
     "orbit-db-io": "~0.2.0",
     "orbit-db-keystore": "~0.3.0",
     "orbit-db-kvstore": "~1.7.0",
-    "orbit-db-pubsub": "~0.5.5",
+    "orbit-db-pubsub": "0.5.7",
     "orbit-db-storage-adapter": "~0.5.3",
-    "orbit-db-store": "~3.0.0"
+    "orbit-db-store": "~3.0.0",
+    "protons": "^1.2.0"
   },
   "devDependencies": {
     "adm-zip": "^0.4.13",

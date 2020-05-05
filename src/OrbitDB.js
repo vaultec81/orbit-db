@@ -54,6 +54,9 @@ class OrbitDB {
     this.keystore = options.keystore
     this.stores = {}
 
+    this.secureP2P = new (require('./SecureP2P'))(this._pubsub, {
+      identity
+    });
     // AccessControllers module can be passed in to enable
     // testing with orbit-db-access-controller
     AccessControllers = options.AccessControllers || AccessControllers
@@ -121,7 +124,9 @@ class OrbitDB {
     }
 
     const finalOptions = Object.assign({}, options, { peerId: id })
-    return new OrbitDB(ipfs, options.identity, finalOptions)
+    var orbitdb = new OrbitDB(ipfs, options.identity, finalOptions);
+    await orbitdb.secureP2P.start()
+    return orbitdb
   }
 
   /* Databases */
